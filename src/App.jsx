@@ -1,12 +1,9 @@
-import './App.css'
-import Navbar from './components/Navbar'
-
 function App() {
   return (
-    <div className="app-container">
-      <Navbar />
-    </div>
-  )
+    <h1 className="text-5xl font-bold text-red-600">
+      Tailwind Working
+    </h1>
+  );
 }
 
-export default App
+export default App;
