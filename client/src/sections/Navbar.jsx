@@ -1,17 +1,24 @@
+import logo from "../assets/logo.jpg";
+
 function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
-            D
-          </div>
-          <h1 className="text-2xl font-bold text-gray-800">
-            DentalCare
-          </h1>
-        </div>
+       {/* Logo */}
+
+{/* Logo */}
+<div className="flex items-center gap-3">
+  <img
+    src={logo}
+    alt="DentalCare Logo"
+    className="h-12 w-auto"
+  />
+
+  <h1 className="text-2xl font-bold text-gray-800">
+    DentalCare
+  </h1>
+</div>
 
         {/* Navigation */}
         <ul className="hidden md:flex items-center gap-8 text-gray-600 font-medium">
