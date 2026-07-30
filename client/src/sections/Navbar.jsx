@@ -5,34 +5,79 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
+    <nav className="sticky top-0 z-50 bg-stone-900/95 backdrop-blur-md border-b border-stone-800 text-stone-100 transition-colors">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         
         {/* Brand Logo & Name */}
-        <a href="#" className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="DentalCare Logo"
-            className="h-12 w-auto object-contain"
-          />
-          <span className="text-2xl font-bold text-gray-800">
+        <a href="#" className="flex items-center gap-3 group">
+          {/* Framed Logo Badge to gracefully handle image backgrounds */}
+          <div className="p-1.5 bg-stone-800/80 border border-stone-700/80 rounded-xl group-hover:border-amber-200/40 transition-colors shadow-sm">
+            <img
+              src={logo}
+              alt="DentalCare Logo"
+              className="h-8 sm:h-9 w-auto object-contain rounded-lg"
+            />
+          </div>
+          <span className="text-xl sm:text-2xl font-bold text-amber-100 tracking-tight group-hover:text-amber-200 transition-colors">
             DentalCare
           </span>
         </a>
 
-        {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-8 text-gray-600 font-medium">
-          <li><a href="#home" className="hover:text-blue-600 transition-colors">Home</a></li>
-          <li><a href="#about" className="hover:text-blue-600 transition-colors">About</a></li>
-          <li><a href="#services" className="hover:text-blue-600 transition-colors">Services</a></li>
-          <li><a href="#dentists" className="hover:text-blue-600 transition-colors">Dentists</a></li>
-          <li><a href="#testimonials" className="hover:text-blue-600 transition-colors">Testimonials</a></li>
-          <li><a href="#contact" className="hover:text-blue-600 transition-colors">Contact</a></li>
+        {/* Desktop Navigation Links Container */}
+        <ul className="hidden md:flex items-center gap-1 text-sm font-medium text-stone-300 bg-stone-800/60 border border-stone-800 px-3 py-1.5 rounded-full">
+          <li>
+            <a
+              href="#home"
+              className="px-4 py-1.5 rounded-full hover:text-amber-100 hover:bg-stone-800 transition-all duration-200 block"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              className="px-4 py-1.5 rounded-full hover:text-amber-100 hover:bg-stone-800 transition-all duration-200 block"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#services"
+              className="px-4 py-1.5 rounded-full hover:text-amber-100 hover:bg-stone-800 transition-all duration-200 block"
+            >
+              Services
+            </a>
+          </li>
+          <li>
+            <a
+              href="#dentists"
+              className="px-4 py-1.5 rounded-full hover:text-amber-100 hover:bg-stone-800 transition-all duration-200 block"
+            >
+              Dentists
+            </a>
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              className="px-4 py-1.5 rounded-full hover:text-amber-100 hover:bg-stone-800 transition-all duration-200 block"
+            >
+              Testimonials
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="px-4 py-1.5 rounded-full hover:text-amber-100 hover:bg-stone-800 transition-all duration-200 block"
+            >
+              Contact
+            </a>
+          </li>
         </ul>
 
         {/* Desktop CTA Button */}
         <div className="hidden md:block">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition duration-200">
+          <button className="bg-amber-200/90 hover:bg-amber-200 text-stone-900 px-6 py-2.5 rounded-xl text-sm font-semibold active:scale-95 transition-all shadow-md">
             Book Appointment
           </button>
         </div>
@@ -40,10 +85,10 @@ function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-600 focus:outline-none"
+          className="md:hidden p-2 text-stone-300 hover:text-amber-100 focus:outline-none bg-stone-800/80 rounded-lg border border-stone-700/60"
           aria-label="Toggle Menu"
         >
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -55,18 +100,72 @@ function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-4">
-          <ul className="flex flex-col gap-4 text-gray-600 font-medium">
-            <li><a href="#home" onClick={() => setIsOpen(false)} className="block hover:text-blue-600">Home</a></li>
-            <li><a href="#about" onClick={() => setIsOpen(false)} className="block hover:text-blue-600">About</a></li>
-            <li><a href="#services" onClick={() => setIsOpen(false)} className="block hover:text-blue-600">Services</a></li>
-            <li><a href="#dentists" onClick={() => setIsOpen(false)} className="block hover:text-blue-600">Dentists</a></li>
-            <li><a href="#testimonials" onClick={() => setIsOpen(false)} className="block hover:text-blue-600">Testimonials</a></li>
-            <li><a href="#contact" onClick={() => setIsOpen(false)} className="block hover:text-blue-600">Contact</a></li>
+        <div className="md:hidden border-t border-stone-800 bg-stone-900/95 backdrop-blur-md px-6 py-5 space-y-4">
+          <ul className="flex flex-col gap-2 text-stone-300 font-medium text-sm">
+            <li>
+              <a
+                href="#home"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-lg hover:bg-stone-800 hover:text-amber-100 transition-colors"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-lg hover:bg-stone-800 hover:text-amber-100 transition-colors"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#services"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-lg hover:bg-stone-800 hover:text-amber-100 transition-colors"
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="#dentists"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-lg hover:bg-stone-800 hover:text-amber-100 transition-colors"
+              >
+                Dentists
+              </a>
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-lg hover:bg-stone-800 hover:text-amber-100 transition-colors"
+              >
+                Testimonials
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-lg hover:bg-stone-800 hover:text-amber-100 transition-colors"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition mt-2">
-            Book Appointment
-          </button>
+
+          <div className="pt-2 border-t border-stone-800">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="w-full bg-amber-200/90 hover:bg-amber-200 text-stone-900 px-6 py-3 rounded-xl text-sm font-semibold transition active:scale-95"
+            >
+              Book Appointment
+            </button>
+          </div>
         </div>
       )}
     </nav>

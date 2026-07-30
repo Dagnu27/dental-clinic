@@ -32,55 +32,55 @@ const TESTIMONIALS = [
 
 function Testimonials() {
   return (
-    <section className="py-16 md:py-24 px-6 bg-slate-50">
+    <section className="py-16 md:py-24 px-6 bg-stone-900 text-stone-100">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-          <span className="text-blue-600 font-semibold text-sm tracking-wide uppercase">
+          <span className="inline-block bg-stone-800 text-amber-200/80 border border-amber-200/20 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-wide uppercase mb-4">
             Testimonials
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-amber-100">
             What Our Patients Say
           </h2>
-          <p className="text-gray-600 mt-4 text-base sm:text-lg">
+          <p className="text-stone-300 mt-4 text-base sm:text-lg leading-relaxed">
             Trusted by thousands of happy patients across the country.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {TESTIMONIALS.map((item) => (
             <div
               key={item.id}
-              className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between"
+              className="bg-stone-800/60 border border-stone-800 hover:border-amber-200/30 p-8 rounded-2xl shadow-lg transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Rating Stars */}
-                <div className="flex text-amber-400 gap-1 mb-4" aria-label={`Rating: ${item.rating} out of 5 stars`}>
+                {/* Rating Stars in Muted Champagne Gold */}
+                <div className="flex text-amber-200 gap-1 mb-4" aria-label={`Rating: ${item.rating} out of 5 stars`}>
                   {Array.from({ length: item.rating }).map((_, i) => (
                     <span key={i} className="text-lg">★</span>
                   ))}
                 </div>
 
                 {/* Review Text */}
-                <p className="text-gray-600 italic leading-relaxed mb-6">
+                <p className="text-stone-300 italic leading-relaxed mb-6 text-sm sm:text-base">
                   "{item.review}"
                 </p>
               </div>
 
               {/* User Meta Information */}
-              <div className="flex items-center gap-4 pt-4 border-t border-gray-100 mt-auto">
+              <div className="flex items-center gap-4 pt-4 border-t border-stone-700/60 mt-auto">
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-blue-500/20"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-amber-200/30"
                 />
                 <div>
-                  <h4 className="font-bold text-gray-900 text-base">
+                  <h4 className="font-bold text-amber-100 text-base">
                     {item.name}
                   </h4>
-                  <p className="text-xs text-blue-600 font-medium">
+                  <p className="text-xs text-amber-200/80 font-medium mt-0.5">
                     {item.role}
                   </p>
                 </div>
