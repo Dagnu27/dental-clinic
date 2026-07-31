@@ -7,7 +7,7 @@ A modern full-stack MERN application designed to streamline dental clinic operat
 ### 👨‍⚕️ Patient Features
 
 * Patient registration and login
-* Browse available dentists
+* Browse available dentists 
 * Book appointments online
 * View appointment history 
 * Update profile information
