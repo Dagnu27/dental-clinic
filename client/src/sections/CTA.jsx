@@ -17,7 +17,7 @@ function CTA() {
 
         {/* Soft Metallic Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight text-amber-100">
-          Ready For Your Best Smile?
+          Ready For Your Best Smile? 
         </h2>
 
         {/* Subtext */}
